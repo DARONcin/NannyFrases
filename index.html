@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frases para mi Nannyta preciosa 🧡🥹</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #fc862c, rgb(255, 177, 117));
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: #020202;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-size: 24px;
+        }
+        p {
+            font-size: 18px;
+            margin: 20px 0;
+        }
+        button {
+            background: #ff7308;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background: #ffa947;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Una frase especial para mi Nannyta preciosa 🧡🥹</h1>
+        <p id="frase">Presiona el botón para ver una frase bonita.</p>
+        <button onclick="cargarFrase()">Nueva Frase</button>
+    </div>
+
+    <script>
+        const frases = [
+            "Eres mi sueño hecho realidad 🧡.",
+            "Cada día a tu lado es un regalo 🌹.",
+            "Te amo más de lo que las palabras pueden expresar 🥹.",
+            "Eres la razón por la que mi mundo brilla ✨.",
+            "Mi amor por ti crece más y más cada día 🧡.",
+            "Si tuviera que elegir de nuevo, te elegiría a ti una y mil veces 🧡.",
+            "Tu sonrisa ilumina hasta los días más oscuros ☀️.",
+            "No necesito razones para amarte, simplemente lo hago con todo mi corazón 🧡.",
+            "Eres mi persona favorita en todo el universo 🌎🧡.",
+            "Amarte es la mejor decisión que he tomado en mi vida 💑.",
+            "Eres mi paz en este mundo caótico 🧡🌸.",
+            "No hay un solo día en que no piense en ti 💭🧡.",
+            "Tus abrazos son mi lugar seguro 🤗.",
+            "Te amo más allá de las estrellas ✨.",
+            "Eres el pensamiento más bonito que puedo tener 📖🧡.",
+            "Eres mi sueño y mi realidad al mismo tiempo 🧡.",
+            "Cuando estoy contigo, el tiempo se detiene ⏳.",
+            "Mi corazón late más fuerte cuando estás cerca 🧡.",
+            "A tu lado, cada instante es especial 🌟.",
+            "Eres mi todo y más 🧡.",
+            "Tu amor es mi mayor tesoro 💎.",
+            "Mi felicidad tiene tu nombre 😊🧡.",
+            "Cada latido de mi corazón dice tu nombre 🧡.",
+            "Eres la melodía más hermosa de mi vida 🎶🧡.",
+            "Tus besos son mi mayor temtación 😘🧡.",
+            "No hay un solo día que no agradezca haberte encontrado 🧡🍊.",
+            "Eres la respuesta a todas mis preguntas 🧡🍊🍋.",
+            "A tu lado, cualquier día es el mejor día 🌞🧡.",
+            "Tus brazos son mi lugar favorito 🥰🍊.",
+            "Nuestro amor es la historia más bonita jamás contada 📜🧡.",
+            "Mi tarjeta de crédito y mi amor por ti no tienen límites ♾️🧡.",
+            "Eres mi presente y mi futuro 🧡.",
+            "Amarte es la mejor parte de mi vida 🧡🍊.",
+            "Tu amor ilumina mis días más oscuros 💡🧡.",
+            "Si el amor tuviera un rostro, sería el tuyo 😊🧡.",
+            "Tus caricias son poesía escrita en mi piel ✍️🧡.",
+            "Eres el sueño que nunca quiero despertar 💤🧡.",
+            "Eres la luz de mi vida 💡🧡.",
+            "Tu amor me hace volar sin alas 🧡🌌.",
+            "El amor verdadero tiene tu nombre 🧡.",
+            "Eres el latido más fuerte de mi corazón 🧡.",
+            "Mi amor por ti nunca tendrá final 📖🧡.",
+            "No hay un solo día que no sonría por ti 😊🧡.",
+            "Eres mi estrella en la noche más oscura 🌠.",
+            "Cuando te veo, mi mundo cobra sentido 🌎🧡.",
+            "Cada beso tuyo es un pedacito de cielo 😘🧡.",
+            "Tu amor me hace sentir que puedo con todo ♨️🧡.",
+            "Eres mi dulce adicción 🍫🧡.",
+            "Eres el latido que nunca quiero perder 🧡🧡🧡.",
+            "Nuestro amor es como un canción de Siddhartha, pero real ✨🧡.",
+            "Tus ojos son mi ventana al paraíso 🌅🧡.",
+            "Cada momento contigo es un tesoro 💎.",
+            "Tu amor es mi refugio de la oscuridad ⛈️🧡.",
+            "Me haces feliz con solo existir 😊🧡.",
+            "En tu amor encontré mi hogar 🏡🧡.",
+            "Eres mi sol en los días nublados ☀️.",
+            "Eres mi razón para sonreír cada día 😊🧡.",
+            "Amar es fácil cuando se trata de ti 🍋🧡🍊.",
+            "Mi mundo es más bonito desde que estás en él 🌍🧡🍊.",
+            "Eres mi para siempre 🧡.",
+            "Cada suspiro mío lleva tu nombre 🧡🍊.",
+            "Mi corazón late al ritmo de tu amor 🧡🍊.",
+            "Nuestro amor es eterno como las estrellas ✨.",
+            "Tú y yo somos el mejor equipo 💑🧡.",
+            "Eres la mejor parte de mi vida 🧡🧡." 
+        ];
+
+        function cargarFrase() {
+            const indice = Math.floor(Math.random() * frases.length);
+            document.getElementById("frase").innerText = frases[indice];
+        }
+    </script>
+</body>
+</html>
